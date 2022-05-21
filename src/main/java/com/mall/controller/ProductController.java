@@ -6,8 +6,8 @@ import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.mall.common.Result;
-import com.mall.entity.Article;
-import com.mall.service.IArticleService;
+import com.mall.entity.Product;
+import com.mall.service.IProductService;
 import com.mall.utils.TokenUtils;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,15 +23,15 @@ import java.util.List;
  * @since 2022-03-22
  */
 @RestController
-@RequestMapping("/article")
-public class ArticleController {
+@RequestMapping("/product")
+public class ProductController {
 
     @Resource
-    private IArticleService articleService;
+    private IProductService articleService;
 
     // 新增或者更新
     @PostMapping
-    public Result save(@RequestBody Article article) {
+    public Result save(@RequestBody Product article) {
         if (article.getId() == null) { // 新增
             article.setTime(DateUtil.now());  // new Date()
             article.setUser(TokenUtils.getCurrentUser().getNickname());
@@ -66,7 +66,7 @@ public class ArticleController {
     public Result findPage(@RequestParam String name,
                            @RequestParam Integer pageNum,
                            @RequestParam Integer pageSize) {
-        QueryWrapper<Article> queryWrapper = new QueryWrapper<>();
+        QueryWrapper<Product> queryWrapper = new QueryWrapper<>();
         queryWrapper.orderByDesc("id");
         if (StrUtil.isNotBlank(name)) {
             queryWrapper.like("name", name);

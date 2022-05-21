@@ -1,7 +1,7 @@
 package com.mall.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.mall.entity.Article;
+import com.mall.entity.Product;
 
 /**
  * <p>
@@ -11,6 +11,6 @@ import com.mall.entity.Article;
  * @author 青哥哥
  * @since 2022-03-22
  */
-public interface ArticleMapper extends BaseMapper<Article> {
+public interface ProductMapper extends BaseMapper<Product> {
 
 }

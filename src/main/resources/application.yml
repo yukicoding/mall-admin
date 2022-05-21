@@ -2,6 +2,7 @@ server:
   ip: localhost
   port: 8081
 
+
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -25,5 +26,6 @@ mybatis-plus:
 
 files:
   upload:
-    path: D:/代码/小白做毕设2022/files/
+    path: D:/files/
+
 #    path: /home/files/

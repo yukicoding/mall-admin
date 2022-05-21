@@ -20,7 +20,7 @@ import java.io.Serializable;
 @Getter
 @Setter
   @ApiModel(value = "Article对象", description = "")
-public class Article implements Serializable {
+public class Product implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
